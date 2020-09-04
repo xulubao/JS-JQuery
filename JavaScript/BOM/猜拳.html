@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜拳小游戏</title>
+</head>
+<body>
+    【1】剪刀 【2】石头 【3】布<br>
+    请输入你的出拳数字<input type="text" id="number"><br>
+    <input type="button" value="比赛" onclick="start()"/>
+    <div id="text"></div>
+
+</body>
+<script>
+
+    //开始判断谁输谁赢
+    function start(){
+        var numbesr = document.getElementById("number").value;
+        console.log(numbesr+"ren");
+        var text = document.getElementById("text");
+        if (isNaN(numbesr)&&(numbesr<1||numbesr>3)){
+            document.write("输入的数字有误，请重新输入！");
+            location.reload();//刷新页面
+        }
+        var computer = random();
+        console.log("diann"+computer);
+        var ss =  numbesr - computer;
+        if (ss==-1||ss==2){
+            text.innerHTML = "结果：你输了";
+        }else if(ss==-2||ss==1){
+            text.innerHTML = "结果：你赢了";
+        }else {
+            text.innerHTML = "结果:平局";
+        }
+        text.innerHTML += "<br>你出拳"+numbesr;
+        text.innerHTML += "<br>电脑出拳"+computer;
+    }
+
+    //获取1-3的随机数
+    function random(){
+        return parseInt(Math.random()*(3-1+1))+1;
+    }
+</script>
+</html>

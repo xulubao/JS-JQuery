@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var sex = prompt("请输入你的性别、体重、身高(以‘-’分割)");
+			sex = sex.split("-");
+			switch(sex[0]){
+				case "男":
+					//sexwei 代表标准体重
+					var sexwei = man(sex[2]);
+					alert(boolen(sexwei,sex[1]));
+					break;
+				case "女":
+					//sexwei 代表标准体重
+					var sexwei = woman(sex[2]);
+					alert(boolen(sexwei,sex[1]));
+					break;
+				default:
+					alert("输入的性别错误！");
+					break;
+			}
+			//计算男性标准体重
+			function man(height){
+				if(isNaN(height)||height<1){
+					alert("输入的身高错误！");
+					return;
+				}
+				var weight = (height - 100)*0.90;
+				console.log(weight);
+				return weight;
+			}
+			//计算女性标准体重
+			function woman(height){
+				if(isNaN(height)||height<1){
+					alert("输入的身高错误！");
+					return;
+				}
+				var weight = (height - 105)*0.92;
+				return weight;
+			}
+			//demo代表标准体重，weight代表要判断的体重
+			function boolen(demo,weight){
+				low = demo - (demo * 0.05);
+				max = demo + (demo * 0.05);
+				if(weight>low&&weight<max){
+					return "标准体重";
+				}else if(weight<low){
+					return "偏瘦";
+				}else if(weight>max){
+					return "偏胖";
+				}
+			}
+		</script>
+	</body>
+</html>

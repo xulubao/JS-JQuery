@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页背景改色</title>
+</head>
+<body>
+</body>
+<script>
+
+    //获取一个随机数
+    function colors(start , end){
+        return parseInt(Math.random()*(end-start+1))+start;
+    }
+    //返回rgb函数
+    function bgcolor(){
+        var red = colors(0,255);
+        var green = colors(0,255);
+        var blue = colors(0,255);
+        return  "rgb("+red+","+green+","+blue+")";
+    }
+    //改变背景颜色
+    function bodyBgColor(){
+        document.body.style.background = bgcolor();
+        window.setTimeout("bodyBgColor()",1000);
+    }
+    bodyBgColor();
+</script>
+</html>
