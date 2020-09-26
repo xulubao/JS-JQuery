@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0271da9-1d58-457a-92b2-47a804e5894f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/JQuery/table.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JQuery/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/JQuery/table.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
       <workItem from="1599200046267" duration="80000" />
       <workItem from="1599200127541" duration="1532000" />
       <workItem from="1600959533312" duration="1000" />
-      <workItem from="1601085470049" duration="1068000" />
+      <workItem from="1601085470049" duration="13958000" />
     </task>
     <task id="LOCAL-00001" summary="javascript第一次学习">
       <created>1599179949909</created>
@@ -78,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599201343135</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="javascript学习">
+      <created>1601086753096</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601086753096</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,10 +101,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1599180721824" />
-    <state x="593" y="16" key="CommitChangelistDialog2" timestamp="1599201341873">
+    <state x="593" y="0" key="CommitChangelistDialog2" timestamp="1601086751656">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="593" y="16" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1599201341873" />
+    <state x="593" y="0" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1601086751656" />
     <state x="294" y="76" key="DiffContextDialog" timestamp="1599201321932">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -110,10 +117,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1599179847055" />
-    <state x="513" y="164" key="Vcs.Push.Dialog.v2" timestamp="1599201613339">
+    <state x="513" y="164" key="Vcs.Push.Dialog.v2" timestamp="1601086760420">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="513" y="164" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1599201613339" />
+    <state x="513" y="164" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1601086760420" />
     <state x="565" y="331" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1599201606701">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -122,13 +129,29 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="937" y="333" key="git4idea.ui.GitStashDialog/0.0.1536.864@0.0.1536.864" timestamp="1599187024423" />
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1599200422683">
+    <state x="675" y="200" key="run.anything.popup" timestamp="1601104325434">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1599200422683" />
+    <state x="675" y="200" key="run.anything.popup/0.0.1536.864@0.0.1536.864" timestamp="1601104325434" />
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1601102588326">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="430" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1601102588326" />
     <state x="983" y="226" key="svn.repositoryBrowser" timestamp="1599186785484">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="983" y="226" key="svn.repositoryBrowser/0.0.1536.864@0.0.1536.864" timestamp="1599186785484" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/JQuery/table.html</url>
+          <line>53</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

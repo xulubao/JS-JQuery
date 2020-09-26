@@ -9,8 +9,8 @@
     <button id="add">添加</button><button id="remove">删除</button><button id="removeAll">删除所有</button>
     <div style="display: none" id="data">
         <label>姓名<input type="text" id="name"></label><br>
-        <label>性别<select><option>男</option><option>女</option></select></label><br>
-        <label>年龄<input type="number" id="age"></label><br>
+        <label>性别<select id="sex"><option>男</option><option>女</option></select></label><br>
+        <label>年龄<input type="number" id="age" min="0"></label><br>
         <button id="save">确定添加</button>
     </div>
     <table border="1px solid #ccc" width="500px">
@@ -18,6 +18,7 @@
             <th><input type="checkbox" id="all_table"></th>
             <th>ID</th>
             <th>姓名</th>
+            <th>性别</th>
             <th>年龄</th>
             <th> </th>
         </tr></thead>
@@ -31,10 +32,64 @@
             $("#add").click(function(){
                 $("#data").toggle();
             });
+            //保存到表格中去
             $("#save").click(function (){
+                if (flag){
+                    $(indexRow).children('td').eq(2).html($("#name").val());
+                    $(indexRow).children('td').eq(3).html($("#sex").val());
+                    $(indexRow).children('td').eq(4).html($("#age").val());
+                    flag = false;
+                    $("#name").val("");
+                    $("#sex").val("男");
+                    $("#age").val("");
+                    $("#data").hide();
+                }else {
                 var tr = $("<tr>");
-               $("td").html( $("<input type='checkbox'>")).appendTo(tr);
-
+                $("<td>").html( $("<input type='checkbox'>")).appendTo(tr);
+                $("<td>").html(parseInt($("#tbody>tr:last>td:eq(1)").text()==""?"0":$("#tbody>tr:last>td:eq(1)").text())+1).appendTo(tr);
+                $("<td>").html($("#name").val()).appendTo(tr);
+                $("<td>").html($("#sex").val()).appendTo(tr);
+                $("<td>").html($("#age").val()).appendTo(tr);
+                var td = $("<td>");
+                $("<input type='button' class='edit' value='编辑'>").appendTo(td);
+                $("<input type='button' class='delete' value='删除'>").appendTo(td);
+                tr.append(td);
+                tr.appendTo($("#tbody"));
+                }
+            });
+            //删除选中的
+            $("#remove").click(function (){
+                $("#tbody>tr>td>input:checked").parent().parent().remove();
+            });
+            //删除所有
+            $("#removeAll").click(function () {
+                if (confirm("你确定删除所有数据？")){
+                    $("#tbody tr").remove();
+                }
+            });
+            //删除
+            $("#tbody").on("click",".delete",function(){
+                $(this).parent().parent().remove();
+            });
+            //全选按钮
+            $("#all_table").click(function() {
+                if ($("#all_table").is(':checked')){
+                    $("#tbody input[type='checkbox']").prop("checked",true);
+                }else {
+                    $("#tbody input[type='checkbox']").prop("checked",false);
+                }
+            });
+            //编辑
+            var indexRow;
+            var flag = false;
+            $("#tbody").on("click",".edit",function (){
+                $("#data").show();
+                flag = true;
+                var index = $(this).parent().parent();
+                indexRow = index;
+                $("#name").val(index.children('td').eq(2).html());
+                $("#sex").val(index.children('td').eq(3).html());
+                $("#age").val(index.children('td').eq(4).html());
             });
         });
     </script>
