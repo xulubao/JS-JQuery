@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增删查改表格</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <button id="add">添加</button><button id="remove">删除</button><button id="removeAll">删除所有</button>
+    <div style="display: none" id="data">
+        <label>姓名<input type="text" id="name"></label><br>
+        <label>性别<select><option>男</option><option>女</option></select></label><br>
+        <label>年龄<input type="number" id="age"></label><br>
+        <button id="save">确定添加</button>
+    </div>
+    <table border="1px solid #ccc" width="500px">
+        <thead><tr>
+            <th><input type="checkbox" id="all_table"></th>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th> </th>
+        </tr></thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+    <script>
+        $(function(){
+            //点击添加按钮显示添加
+            $("#add").click(function(){
+                $("#data").toggle();
+            });
+            $("#save").click(function (){
+                var tr = $("<tr>");
+               $("td").html( $("<input type='checkbox'>")).appendTo(tr);
+
+            });
+        });
+    </script>
+</body>
+</html>

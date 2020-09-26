@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0271da9-1d58-457a-92b2-47a804e5894f" name="Default Changelist" comment="" />
+    <list default="true" id="d0271da9-1d58-457a-92b2-47a804e5894f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/JQuery/table.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +53,9 @@
       <updated>1599179718566</updated>
       <workItem from="1599179719802" duration="13370000" />
       <workItem from="1599200046267" duration="80000" />
-      <workItem from="1599200127541" duration="1087000" />
+      <workItem from="1599200127541" duration="1532000" />
+      <workItem from="1600959533312" duration="1000" />
+      <workItem from="1601085470049" duration="1068000" />
     </task>
     <task id="LOCAL-00001" summary="javascript第一次学习">
       <created>1599179949909</created>
@@ -66,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599186973933</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="javascript学习">
+      <created>1599201343135</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599201343135</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,29 +86,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="javascript第一次学习" />
-    <option name="LAST_COMMIT_MESSAGE" value="javascript第一次学习" />
+    <MESSAGE value="javascript学习" />
+    <option name="LAST_COMMIT_MESSAGE" value="javascript学习" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599180721824">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1599180721824" />
-    <state x="593" y="16" key="CommitChangelistDialog2" timestamp="1599186973020">
+    <state x="593" y="16" key="CommitChangelistDialog2" timestamp="1599201341873">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="593" y="16" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1599186973020" />
-    <state x="932" y="176" key="FileChooserDialogImpl" timestamp="1599200123813">
+    <state x="593" y="16" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1599201341873" />
+    <state x="294" y="76" key="DiffContextDialog" timestamp="1599201321932">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="932" y="176" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1599200123813" />
+    <state x="294" y="76" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1599201321932" />
+    <state x="932" y="176" key="FileChooserDialogImpl" timestamp="1599201302872">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="932" y="176" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1599201302872" />
     <state x="270" y="76" key="SettingsEditor" timestamp="1599179847055">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="270" y="76" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1599179847055" />
-    <state x="513" y="164" key="Vcs.Push.Dialog.v2" timestamp="1599187131126">
+    <state x="513" y="164" key="Vcs.Push.Dialog.v2" timestamp="1599201613339">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="513" y="164" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1599187131126" />
+    <state x="513" y="164" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1599201613339" />
+    <state x="565" y="331" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1599201606701">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="565" y="331" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.864@0.0.1536.864" timestamp="1599201606701" />
     <state x="937" y="333" key="git4idea.ui.GitStashDialog" timestamp="1599187024423">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
