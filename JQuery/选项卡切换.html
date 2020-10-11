@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.1.min.js"></script>
+	</head>
+	<body>
+		<div id="mybox" >
+		    点击我让所有id为mybox的元素边框该为：5px dotted green
+		  </div>
+		 
+		 
+		  <div class="box" >
+		    点击我让所有class=red的元素边框该为：5px dotted green
+		  </div>
+		 
+		 
+		  <div class="box1 red" >
+		    点击我让所有div的元素边框该为：5px dotted green
+		  </div>
+		 
+		 
+		  <div class="box" >
+		    点击我让id为mybox的元素、p元素边框该为：5px solid green
+		  </div>
+		 
+		 
+		  <div class="box red">
+		    点击我隐藏除了我以外所有的兄弟元素
+		  </div>
+		 
+		  <p>我是段落...</p>
+	</body>
+	<script>
+		$(
+			function(){
+				// 点击我让所有id为mybox的元素边框该为：5px dotted green
+				$("#mybox").css("cursor", "pointer").click(
+					function() {
+						$("#mybox").css("border", "5px dotted green");
+					}
+				);
+			}
+		);
+	</script>
+</html>

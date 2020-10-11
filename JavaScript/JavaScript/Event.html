@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+
+		</style>
+	</head>
+	<body>
+		<div>姓名：<input type="text" id="names" onblur="names()"><span id="name1"></span></div>
+		<div>密码：<input type="password" id="password" onblur="pass()" /><span id="password1"></span></div>
+		<div>年龄：<input type="number" id="age" onblur="age1()" /><span id="age1"></span></div>
+		<div>国家：<input type="text" id="state" onblur="state()" /><span id="state1"></span></div>
+		<div>地址：<input type="text" id="address" onblur="address()"/><span id="address1"></span></div>
+	</body>
+	<script>
+		function names() {
+			var name1 = document.getElementById("name1");
+			var names = document.getElementById("names")
+			console.log(names.value);
+			//var names = document.getElementById("names");
+			if (names.value.length < 6) {
+				name1.innerText = "不能为空且长度不能小于6";
+				name1.style.color = "red";
+			} else {
+				name1.innerText = "名字符合要求";
+				name1.style.color = "green";
+			}
+		}
+
+		function pass() {
+			var pass = event.target;
+			var pass1 = document.getElementById("password1");
+			if (pass.value.length < 10) {
+				pass1.innerText = "不能为空且长度不能小于10";
+				pass1.style.color = "red";
+			} else {
+				pass1.innerText = "密码符合要求";
+				pass1.style.color = "green";
+			}
+		}
+
+		function age1() {
+			var age = event.target;
+			var age1 = document.getElementById("age1");
+			if (age.value < 18 || age.value > 60) {
+				age1.innerText = "年龄必须在18~60之间";
+				age1.style.color = "red";
+			} else {
+				age1.innerText = "符合年龄要求";
+				age1.style.color = 'green';
+			}
+		}
+
+		function state() {
+			var state = event.target;
+			console.log(state.value);
+			var state1 = document.getElementById("state1");
+			if (state.value == '中国' || state.value == "美国" || state.value == "巴基斯坦") {
+				state1.innerText = "正确";
+				state1.style.color = "green";
+			}else{
+				state1.innerText = "国家只能是'中国','美国','巴基斯坦'";
+				state1.style.color = "red";
+			}
+		}
+		function address(){
+			var address = event.target;
+			var address1 = document.getElementById("address1");
+			if(address.value.length>50||address.value == ""){
+				address1.innerText = "不能大于50个字符";
+				address1.style.color = "red";
+			}else{
+				address1.innerText = "符合要求";
+				address1.style.color = "green";
+			}
+		}
+	</script>
+</html>

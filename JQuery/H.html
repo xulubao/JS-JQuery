@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.1.min.js"></script>
+
+	</head>
+	<body>
+		<button class="quanguo">省份</button>
+
+	</body>
+	<script>
+		$(function() {
+			var adds = ["湖南", "广东", "湖北", "西藏"];
+			var add = [
+				["长沙", "株洲", "湘潭"],
+				["广州", "深圳", "东莞"],
+				["武汉", "黄石", "孝感", "宜昌"],
+				["拉萨", "那曲", "日喀则", "山南"]
+			];
+			$(".quanguo").click(function() {
+				var os = $(this).offset();
+				var px = os.left;
+				var py = os.top + $(this).height() + 5;
+				var div = $("<div>").css({
+					"width": "400px",
+					"border": "1px solid #CCC",
+					"overflow": "hidden",
+					"position": "absolute",
+					"left": px + "px",
+					"top": py + "px"
+				}).appendTo(document.body);
+				var ul = $("<ul>").css({
+					"padding": '0px',
+					"margin": '0px'
+				}).appendTo(div);
+				for (var i = 0; i < adds.length; i++) {
+					$("<li>").html(adds[i])
+						.attr("value",i)
+						.css("float", "left")
+						.css("list-style", "none")
+						.css("margin", "5px 5px")
+						.css("cursor", "pointer")
+						.click(function() {
+							$(".quanguo").html($(this).html()).attr("value",$(this).attr("value"));
+							$(this).parent().parent().remove();
+							$("<button>").addClass("shiqu").html("市").click(function() {
+								var ind = $(".quanguo").attr("value");
+								var os = $(this).offset();
+								var px = os.left;
+								var py = os.top + $(this).height() + 8;
+								var div = $("<div>").css({
+									"width": "400px",
+									"border": "1px solid #CCC",
+									"overflow": "hidden",
+									"position": "absolute",
+									"left": px + "px",
+									"top": py + "px"
+								}).appendTo(document.body);
+								var ul = $("<ul>").css({
+									"padding": '0px',
+									"margin": '0px'
+								}).appendTo(div);
+								for (var i = 0; i < add[ind].length; i++) {
+									$("<li>").html(add[ind][i])
+										.css("float", "left")
+										.css("list-style", "none")
+										.css("margin", "5px 5px")
+										.css("cursor", "pointer")
+										.click(function() {
+											$(".shiqu").html($(this).html());
+											$(this).parent().parent().remove();
+										}).appendTo(ul);
+								}
+							}).appendTo($(".quanguo").parent());
+						}).appendTo(ul);
+				}
+			});
+		});
+	</script>
+</html>

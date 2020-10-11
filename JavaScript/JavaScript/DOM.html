@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body >
+		竞拍价格:<input type="text" name="price" onchange="checkNumber(this)"/><br/>
+		购买数量:<input type="text" name="number" onchange="checkNumber(this)"/><br/>
+		支付方式:<select id="se">
+					<option value="0.6">银行转账</option>
+					<option value="0.7">电话支付</option>
+					<option value="0.8">邮政汇款</option>
+					<option value="0.9">Q币支付</option>
+			    </select><br />
+		预计总价:<input type="text" id="sum" readonly="readonly"/><br/>
+		<input type="button" value="计算看看" onclick="sum()" />
+	</body>
+	<script>
+		function checkNumber(obj){
+			if(obj.value==""){
+				alert("未输入！");
+				return false;
+			}
+			if(isNaN(obj.value)){
+				obj.value="";
+				alert("输入的是不是数字，请重新输入！");
+				return false;
+			}else{
+				if(obj.value<0){
+					obj.value="";
+					alert("输入的为负数，请重新输入！");
+					return false;
+				}
+				return true;
+			}
+		}
+		function sum(){
+			var price = document.getElementsByName("price")[0];
+			var number = document.getElementsByName("number")[0];
+			if(checkNumber(price)&&checkNumber(number)){
+				var se = document.getElementById("se");
+				se = se.value;
+				var sum = price.value*number.value*se;
+				var sums = document.getElementById("sum");
+				sums.value = sum;
+			}
+		}
+	</script>
+</html>

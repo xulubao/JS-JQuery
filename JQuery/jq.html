@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<style>
+			.hover{
+				background-color: aqua;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="addRow">添加一行</button><button id="deleteRow">删除一行</button><button id="deleteAll">删除所有行</button><button id="deleteCheck">删除选中行</button>
+		<table border="1px solid #000000">
+			<tbody>
+				<tr><td><input type="checkbox"></td><td>1</td><td><button>删除</button></td></tr>
+			</tbody>
+		</table>
+		
+		<script>
+			$(function(){
+				$("tbody").on("mouseover mouseout","tr",function(event){
+					if(event.type == "mouseover"){
+						event.target.addClass("hover");
+						console.log(event);
+					}else if(event.type == "mouseout"){
+						 event.target.removeClass("hover");
+						console.log(event);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//展开表单
+			function to_add(){
+				var btnSave = document.querySelector("#btn-save");
+				btnSave.setAttribute("op", 1);//op='1',适用于自定义属性
+				
+				var div = document.querySelector("#add-section");
+				if(div.style.display == 'none'){
+					div.style.display = 'block';
+				}else{
+					div.style.display = 'none';
+				}
+			}
+			
+			//保存
+			function save(){
+				var btnSave = document.querySelector("#btn-save");
+				if(btnSave.getAttribute("op") == 2){
+					//编辑
+					edit();
+					var div = document.querySelector("#add-section");
+					div.style.display = 'none';
+					return;
+				}
+				
+				var name = document.querySelector("#name").value;
+				var sex = document.querySelector("#sex").value;
+				var age = document.querySelector("#age").value;
+				
+				//checkbox
+				var chk = document.createElement("input");
+				chk.type = "checkbox";
+				chk.className = "s";
+				var td1 = document.createElement("td");
+				td1.appendChild(chk);
+				
+				//id
+				var td2 = document.createElement("td");
+				var tbody = document.querySelector("#tb");
+				var trs = tbody.querySelectorAll("tr");//所有行
+				td2.innerHTML = trs.length + 1;
+				
+				//name
+				var td3 = document.createElement("td");
+				td3.innerHTML = name;
+				
+				//sex
+				var td4 = document.createElement("td");
+				td4.innerHTML = sex;
+				
+				//age
+				var td5 = document.createElement("td");
+				td5.innerHTML = age;
+				
+				//编辑，删除
+				var btnEdit = document.createElement("button");
+				btnEdit.innerHTML = "编辑";
+				btnEdit.onclick = function(){
+					initForm(this);
+				};
+				var btnDel = document.createElement("button");
+				btnDel.innerHTML = "删除";
+				btnDel.onclick = function(){
+					delRow(this);
+				};
+				var td6 = document.createElement("td");
+				td6.appendChild(btnEdit);
+				td6.appendChild(btnDel);
+				
+				//加入<tr></tr>
+				var tr = document.createElement("tr");
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				tr.appendChild(td4);
+				tr.appendChild(td5);
+				tr.appendChild(td6);
+				
+				tbody.appendChild(tr);
+			}
+			
+			//删除当前行
+			function delRow(row){
+				if(confirm("真的要删除吗？")){
+					delCurRow(row);
+				}
+			}
+			
+			function delCurRow(row){
+				var yeye = row.parentNode.parentNode;
+				var yeyeye = yeye.parentNode;
+				yeyeye.removeChild(yeye);
+			}
+			
+			//全选
+			function select1(me){
+				var chks = document.querySelectorAll(".s");
+				for(var i = 0; i < chks.length; i ++){
+					chks[i].checked = me.checked;
+				}
+			}
+			
+			//批量删除
+			function batchDelete(){
+				if(!confirm("要删除选中的行吗？")) return;
+				
+				var chks = document.querySelectorAll(".s");
+				for(var i = 0; i < chks.length; i ++){
+					if(chks[i].checked){
+						delCurRow(chks[i]);
+					}
+				}
+			}
+			
+			//删除所有行
+			function delAll(){
+				if(!confirm("要删除所有的行吗？")) return;
+				
+				var tbody = document.querySelector("#tb");
+				var trs = tbody.querySelectorAll("tr");
+				for(var i = trs.length - 1; i >= 0; i --){
+					tbody.removeChild(trs[i]);
+				}
+			}
+			
+			//编辑时的初始化表单
+			var editRow;
+			function initForm(btn){
+				document.querySelector("#add-section")
+					.style.display = "block";
+					
+				var btnSave = document.querySelector("#btn-save");
+				btnSave.setAttribute("op", 2);//op='2',适用于自定义属性
+				
+				var tr = btn.parentNode.parentNode;
+				editRow = tr;//这是要编辑的行
+				var tds = tr.querySelectorAll("td");
+				var name = tds[2].innerHTML;
+				var sex = tds[3].innerHTML;
+				var age = tds[4].innerHTML;
+				document.querySelector("#name").value = name;
+				document.querySelector("#sex").value = sex;
+				document.querySelector("#age").value = age;
+			}
+			
+			//编辑
+			function edit(){
+				var name = document.querySelector("#name").value;
+				var sex = document.querySelector("#sex").value;
+				var age = document.querySelector("#age").value;
+				
+				var tds = editRow.querySelectorAll("td");
+				tds[2].innerHTML = name;
+				tds[3].innerHTML = sex;
+				tds[4].innerHTML = age;
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<button onclick="to_add()">添加</button>
+			<button onclick="batchDelete()">批量删除</button>
+			<button onclick="delAll()">全部删除</button>
+		</div>
+		
+		<div id="add-section" style="display: none;">
+			<div>姓名：<input id="name" /></div>
+			<div>性别：
+				<select id="sex">
+					<option value="男">男</option>
+					<option value="女">女</option>
+				</select></div>
+			<div>年龄：<input id="age" type="number" min="1" max="100"/></div>
+			<div><button id="btn-save" op="1" onclick="save()">保存</button></div>
+		</div>
+		
+		<table border="1" width="500px">
+			<thead>
+				<tr>
+					<th><input type="checkbox" onchange="select1(this)"/></th>
+					<th>ID</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年龄</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody id="tb">
+				
+			</tbody>
+		</table>
+	</body>
+</html>

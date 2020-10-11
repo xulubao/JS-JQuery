@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.5.1.min.js"></script>
+	</head>
+	<body>
+		电影<select id="a" multiple="multiple" size="5" style="width: 300px;"> 
+			<option>夏有乔木 雅望天堂</option>
+			<option>爱宠大机密</option>
+			<option>我最好朋友的婚礼</option>
+			<option>绝地逃亡</option>
+			<option>封神传奇</option>
+			<option>大鱼海棠</option>
+		</select>
+		<button >>></button>
+		<button >></button>
+		<button >< </button>
+		<button ><<</button>
+		
+		我喜欢的电影<select id="b" style="width: 300px;" multiple="multiple" size="5"></select>
+	</body>
+	<script>
+		$(function(){
+			$("button:eq(0)").click(function(){
+				$("#a>option").appendTo($("#b"));
+			});
+			$("button:eq(1)").click(function(){
+				$("#a>option:selected").appendTo($("#b"));
+			});
+			$("button:eq(2)").click(function(){
+				$("#b>option:selected").appendTo($("#a"));
+			});
+			$("button:eq(3)").click(function(){
+				$("#b>option").appendTo($("#a"));
+			});
+		});
+	</script>
+</html>
