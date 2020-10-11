@@ -2,9 +2,114 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <title>抽奖</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <style>
+        body{
+            width: 960px;
+            margin: 0px auto;
+        }
+        li{list-style: none}
+        header{
+            margin: 10px 30px;
+            background-color: white;
+            color: brown;
+            text-align: center;
+            font-size: 30px;
+        }
+        section{
+            text-align: center;
+            width: 600px;
+            float: left;
+        }
+        aside{
+            background-color: white;
+            float: left;
+            width: 350px;
+        }
+        .coujianghuodong{
+            color: white;
+            font-size: 40px;
+            text-align: center;
+        }
+        .data{
 
+            background-color: white;
+            color: black;
+        }
+        input{
+            width: 400px;
+            height: 50px;
+            font-size: 60px;
+            margin: 10px;
+        }
+        button{
+            font-size: 30px;
+            border: 0;
+            margin: 10px;
+            text-align: center;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body style="background-color: #ff7f50">
+<header >大奖花落谁家，敬请期待...</header>
+<section>
+    <div class="coujianghuodong">抽奖活动</div>
+    <div ><input type="text" class="data" id="name" disabled></div>
+    <div ><input type="number" class="data" id="iphone" disabled></div>
+    <div style="margin-top: 50px"><button id="begin">开始抽奖</button><button id="stop" disabled="disabled">停止抽奖</button></div>
+</section>
+<aside>
+    <div style="text-align: center;font-size: 20px">中奖者名单</div>
+    <ul id="list">
+    </ul>
+
+</aside>
 </body>
+<script>
+    var stu = [['张三','15211666207'],['许仙','1521166584'],['马冬梅','15211666207'],['徐特秋','1521166584'],['图灵','18374191108']];
+    $(function (){
+        var flag;//是否开始滚动抽奖
+        var index ;//滚动到哪个位置
+        var grade=5;//等级
+        function lottoStart(){
+            clearInterval(flag);
+            index = randomNumber();
+            $("#name").val(stu[index][0]);
+            $("#iphone").val(stu[index][1]);
+            flag = setInterval(lottoStart,500);
+        }
+        $("#stop").click(function (){
+            $("header").html("大奖花落谁家，敬请期待...");
+            clearInterval(flag);
+            $(this).attr("disabled",true);
+            $("#begin").attr("disabled",false);
+            var gradess;
+            if (grade>3){
+                gradess = "三等奖";
+            }else if (grade>1){
+                gradess = "二等奖";
+            }else {
+                gradess = "一等奖";
+            }
+            grade-- ;
+            $("#list").length = 0;
+            $("<li>").html(gradess + stu[index][0] +" -- " +stu[index][1]).prependTo($("#list"));
+            stu.splice(index,1);
+        });
+        $("#begin").click(function () {
+            $("header").html("正在抽奖，请稍后...");
+            $(this).attr("disabled",true);
+            $("#stop").attr("disabled",false);
+            lottoStart();
+        });
+        //产生一个随机数，用于人员抽奖流动
+        function randomNumber(){
+            var index = parseInt(Math.random()*(stu.length));
+            return index;
+        }
+    });
+</script>
 </html>
